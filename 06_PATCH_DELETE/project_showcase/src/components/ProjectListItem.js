@@ -1,3 +1,25 @@
+// Deliverable 2: Click the delete button and make a 
+// DELETE request
+
+// - Attach an `onClick` event listener to the delete 
+// button
+
+// - Add a `DELETE` fetch request to the event handler 
+// for the delete button
+
+// - Update the `projects` state in the parent component
+// `App` using the `.filter` function
+
+  //  The goal is to return a new array with the deleted project excluded
+
+// -----------------
+
+  // Deliverable 3: Click the claps button and persist the updated number of claps
+
+  // - Send a `PATCH` request when the `clapsCount` is updated through a click event
+  
+  // - Update the `projects` state in the parent component `App` using the `.map` function
+
 import { useState } from "react";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
 
@@ -6,7 +28,7 @@ const ProjectListItem = ({ project, enterProjectEditModeFor }) => {
 
   const [clapCount, setClapCount] = useState(0);
 
-  const handleClap = (clapCount) => setClapCount(clapCount + 1);
+  const handleClap = () => setClapCount(prevCount => prevCount + 1);
 
   const handleEditClick = () => {
     enterProjectEditModeFor(id);

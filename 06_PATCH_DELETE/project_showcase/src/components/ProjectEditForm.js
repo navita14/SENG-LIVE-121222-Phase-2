@@ -1,4 +1,26 @@
-import React, { useState, useEffect } from "react";
+// Deliverable 1: Submit the edit project form and 
+// make a PATCH request
+
+  // Update the `useEffect` inside the `ProjectEditForm` 
+  // component so that the side effect will run upon 
+  // `projectId` updates
+
+  // Inside of the `ProjectEditForm` component, update 
+  // `handleSubmit` to include a `PATCH` request
+
+  // Include the updated state values in the `PATCH` 
+  // request
+
+  // Update the `projects` state in the parent 
+  // component `App` using the `.map` function
+
+    // The goal is to return a new array with the 
+    // original project excluded and the newly updated 
+    // project included.
+
+  // Reset the edit form after submission is complete
+
+import { useState, useEffect } from "react";
 
 const ProjectEditForm = ({ projectId, completeEditing }) => {
   const initialState = {
@@ -17,7 +39,7 @@ const ProjectEditForm = ({ projectId, completeEditing }) => {
     fetch(`http://localhost:4000/projects/${projectId}`)
       .then((res) => res.json())
       .then((project) => setFormData(project));
-  }, [projectId]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
